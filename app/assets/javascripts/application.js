@@ -15,14 +15,17 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require vendor/velocity.min
-//= require vendor/jquery.dynatable
+// require vendor/jquery.dynatable
 //= require vendor/jquery.sticky
 //= require vendor/tipsy
-//= require vendor/quill.min
+// require vendor/quill.min
 //= require cookies_eu
-//= require vendor/pickadate/picker
-//= require vendor/pickadate/picker.date
-//= require vendor/pickadate/picker.time
+// require vendor/pickadate/picker
+// require vendor/pickadate/picker.date
+// require vendor/pickadate/picker.time
 //= require flight-for-rails
+//= require vendor/slick.min
 
 //= require ui
+
+

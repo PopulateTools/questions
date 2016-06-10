@@ -11,22 +11,33 @@ $(function(){
     }
   }
 
-  // init
-  $('.dynatable').dynatable({
-    inputs: {
-      paginationPrev: 'Anterior',
-      paginationNext: 'Siguiente',
-      paginationGap: [1,2,2,1],
-      perPageText: 'Mostrar: ',
-      recordCountText: 'Mostrando ',
-      processingText: 'Procesando...', 
-      searchText: 'Buscar:'
-    },
-    dataset: {
-      perPageDefault: 25,
-      perPageOptions: [25,50,100, 300]
-    }
+  $('.carousel').slick({
+    dots: false,
+    arrows: false,
+    slidesToShow: 1,
+    adaptiveHeight: true
   });
+
+  $('.slick_next').click(function(e) {
+    $('.carousel').slick('slickNext');
+  });
+
+  // // init
+  // $('.dynatable').dynatable({
+  //   inputs: {
+  //     paginationPrev: 'Anterior',
+  //     paginationNext: 'Siguiente',
+  //     paginationGap: [1,2,2,1],
+  //     perPageText: 'Mostrar: ',
+  //     recordCountText: 'Mostrando ',
+  //     processingText: 'Procesando...', 
+  //     searchText: 'Buscar:'
+  //   },
+  //   dataset: {
+  //     perPageDefault: 25,
+  //     perPageOptions: [25,50,100, 300]
+  //   }
+  // });
   
   // $(".sticky").sticky({topSpacing:0});
   

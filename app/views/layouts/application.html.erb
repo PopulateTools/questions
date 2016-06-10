@@ -8,7 +8,40 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
+	
+	<%= yield %>
+
+	<div class="sidebar_player">
+    
+    <div class="points">
+      <div class="points_n">1.234</div>
+      puntos
+    </div>
+
+    <div class="context">
+      <div class="time">Hoy llevas jugando 7m</div>
+      <div class="calm">Tranquilo, solo te dejaremos jugar 20m</div>
+
+    </div>
+
+
+  </div>
+
+  <div class="sidebar_site">
+    <menu>
+      <ul>
+        <li><%= link_to 'Qué y quiénes' %></li>
+        <li><%= link_to 'Añade pregunta', 'question_add' %></li>
+        <li>---</li>
+        <li><%= link_to '[Inicio]', 'home' %></li>
+        <li><%= link_to '[Pregunta]', 'question' %></li>
+      </ul>
+    </menu>
+
+  </div>
+
+</div>
 
 </body>
 </html>

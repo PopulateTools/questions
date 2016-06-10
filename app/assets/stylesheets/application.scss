@@ -1,78 +1,48 @@
 /*
+ * Fonts
+ *
+ */
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,500,700");
+@import "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css";        
+
+
+/*
  * CSS Settings
  *
  */
 /* ToDo: Change to production location */
 @import "vendor/populities";
 @import "vendor/tipsy";
-@import "vendor/jquery.dynatable";
-@import "vendor/quill.snow";
-@import "vendor/pickadate/classic";
-@import "vendor/pickadate/classic.date";
-@import "vendor/pickadate/classic.time";
+// @import "vendor/jquery.dynatable";
+// @import "vendor/quill.snow";
+@import "vendor/slick";
 @import "bourbon";
 @import "cookies_eu";
 
 
 /*
- * Site Settings
+ * Colors
  *
  */
-
-/* 
-PALETTE: Original Greeners
-AUTHOR: @furilo
-
-$background: #FFF;
-$text: #898989;
-
-$color_1: #BCC41A;
-$color_1_dark: #9AA115;
-$color_1_soft: #E5E9A6;
-$color_1_dark_plus: #787D10;
-
-$color_2: #D61D57;
-
-$color_3: #60C8D6;
-$color_3_soft: #E5F2F3;
-*/
-
-
-/* 
-PALETTE: Bluer
-AUTHOR: @damagedgoods
-*/
-
 $background: #FFF;
 $text: #4A4A4A;
 $text_soft: #A3A3A3;
-$separator: #EEEEEE;
-
-$color_1: #00A3D0;
-$color_1_dark: #00A3D0;
-$color_1_soft: #DDECF4;
-$color_1_dark_plus: #172532;
-
-$color_2: #D61D57;
-
-$color_3: #60C8D6;
-$color_3_soft: #E5F2F3;
-
-
-/* General colors */
+$color_separator: #EEEEEE;
+$color_main: #D93E83;
+$color_main_negative: #DED3D4;
+$color_bg_main: #D6DAD1;
+$color_headings: #737571;
+$color_second: #6EAFB3;
+$color_third: #DFBC00;
 $color_bg_error: #F5D6D2;
 $color_text_error: #9C0000;
+$color_facebook: #3A589A;
+$color_twitter: #00ABEF;
 
 
-/*
- * Fonts
- *
- */
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,700,900");
-@import "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css";        
 
-$font_headings: 'Raleway';
-$font_text: 'Raleway';
+$font_headings: 'Source Sans Pro';
+$font_text: 'Source Sans Pro';
 
 
 /*
@@ -94,11 +64,11 @@ body {
   background: $background;
   font-family: $font_text;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.2em;
   color: $text;
 }
 a {
-  color: $color_1_dark;
+  color: $color_main;
   @include transition;
 }
 a:hover {
@@ -112,31 +82,379 @@ footer {
 }
 
 
+
 /*
  * Layout
  *
  */
-.cont {
-  width: 1000px;
-  margin: auto;
-  @include screen(740) {
-    width: auto;
-    padding: 15px;
+$width_questions: 60%;
+$width_sidebar_player: 25%;
+$width_sidebar_site: 15%;
+
+.container {
+
+}
+.question_cont, .sidebar_player, .sidebar_site {
+  // border: 1px solid red;
+  box-sizing: border-box;
+  position: absolute;
+  height: 100%;
+}
+.question_cont {
+  width: $width_questions;
+  background: $color_bg_main;
+  padding: 10% 7% 0 7%;
+}
+.sidebar_player {
+  left: $width_questions;
+  width: $width_sidebar_player;
+  background: rgba($color_bg_main, .46);
+  padding: 10% 3% 0 3%;
+  padding-left: 2rem;
+}
+.sidebar_site {
+  left: $width_questions + $width_sidebar_player;
+  width: $width_sidebar_site;
+  background: $background;
+}
+
+
+
+/*
+ * Home
+ *
+ */
+.home {
+  .social_share {
+    padding: 1.35em 2.75em;
+    @include border-radius(2em);
+  }
+  .social_share:hover {
+    text-decoration: none;
   }
 }
-header.meta {
-  margin: 0;
-  // background: $color_1;
-  background: $color_1_dark_plus;
-  color: $background;
-}
-.resp {
-  @include screen(740, 2000) {
-    display: none;
+
+
+
+/*
+ * Questions
+ *
+ */
+.question {
+  h1 {
+    line-height: 1.4em;
+    color: $color_headings;
+    margin-top: 0;
+  }
+  .question_main {
+    width: 75%;
+  }
+  button {
+    display: inline-block;
+    width: 75%;
+  }
+  button.pass {
+    width: 20%;
+    margin-left: 4%;
+    padding-left: .5em;
+    padding-right: .5em;
   }
 }
-.desktop {
-  @include screen(740) {
-    display: none;
+
+
+
+/*
+ * Sidebar player
+ *
+ */
+.sidebar_player {
+  @include transition(all 2.0s $ease-in-sine);
+  opacity: .7;
+  font-size: .85em;
+  color: $color_headings;
+  .points {
+    position: absolute;
+    top: 2%;
+    left: 2rem;
+    .points_n {
+      background: $color_third;
+      color: #FFF;
+      @include border-radius(4px);
+      padding: .1em 1em;
+      margin: 0 .5em 0 0;
+      text-align: center;
+      display: inline-block;
+    }
+  }
+  .context {
+    .time {
+      font-weight: 700;
+    }
+    .calm {
+
+    }
+  }
+}
+.sidebar_player:hover {
+  opacity: 1;
+}
+
+
+/*
+ * Sidebar site
+ *
+ */
+.sidebar_site {
+  menu {
+    line-height: 1.4em;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 1%;
+    right: 5%;
+    text-align: right;
+    font-size: .85em;
+    a {
+      color: darken($color_bg_main, 10%);
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+
+      }
+    }
+  }
+}
+
+
+
+/*
+ * Forms
+ *
+ */
+form {
+  margin-top: 0;
+}
+input[type=text], input[type=email], input[type=submit], .button, button, .option, select, option, textarea {
+  box-sizing: border-box;
+  height: 54px;
+  padding: 0 1em; 
+  margin: 0 .5em 0 0;
+  display: inline-block;
+  vertical-align: middle;
+  @include border-radius(6px);
+  border: 1px solid $color_separator;
+  font-size: 1.2em;
+  font-style: 400;
+  font-family: $font_headings;
+}
+textarea {
+  width: 100%;
+  height: 200px;
+  padding: 1em;
+}
+input[type=submit], .button, button {
+  @include transition;
+  border: 0;
+  background: $color_main;
+  color: #FFF;
+  padding: 0 2em;
+  cursor: pointer;
+  margin: 1.5em auto;
+}
+input[type=submit]:hover, .button:hover, button:hover {
+  background: darken($color_main, 10%);
+}
+option, select {
+  font-weight: 400;
+  // font-size: .8em;
+  // border: 1px solid #CCC;
+  padding: 18px;
+  background: #F1F1F1;
+}
+.option {
+  padding: 0;
+  display: block;
+  margin: 0 0 .5em 0;
+  text-align: left;
+  height: 65px;
+  font-size: 1.1em;
+  font-weight: 400;
+  color: darken($color_main, 10%);
+  border: none;
+  display: block;
+  input[type="checkbox"] + label, input[type="radio"] + label {
+    box-sizing: border-box;
+    padding: 15px 18px;
+    background: rgba($color_main, .12);
+    @include border-radius(6px);
+  }
+  input[type="checkbox"] + label:hover, input[type="radio"] + label:hover {
+    background: rgba($color_main, .22); 
+  }
+  input[type="checkbox"]:checked + label, input[type="radio"]:checked + label {
+    background: rgba($color_main, .22); 
+  }
+  input[type=text], input[type=submit], .button, button {
+    width: 100%;
+    border: none;
+    padding: 20px;
+    height: 63px;
+  }
+}
+.button:hover, button {
+  color: #FFF;
+}
+button.light, .button.light {
+  background: $color_main_negative;
+  border: 1px solid $color_separator;
+  color: $color_main;
+}
+button.light:hover, .button.light:hover {
+  background: rgba($color_main, .2);
+}
+input[type="checkbox"], input[type="radio"] {
+  display: none;
+}
+input[type="checkbox"] + label, input[type="radio"] + label {
+  cursor: pointer;
+  display: block;
+  padding: 14px;
+  @include transition;
+}
+input[type="checkbox"] + label span, input[type="radio"] + label span {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  border: 1px solid $color_main;
+  background: #FFF;
+  @include border-radius(3px);
+  margin: -4px 11px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+}
+input[type="checkbox"] + label:hover, input[type="radio"] + label:hover {
+  background: rgba($color_main, .1);
+}
+input[type="checkbox"]:checked + label, input[type="radio"]:checked + label {
+  background: rgba($color_main, .3);
+}
+input[type="checkbox"]:checked + label span, input[type="radio"]:checked + label span {
+  background: $color_main;
+}
+input[type="radio"] + label span {
+  @include border-radius(13px);
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+}
+select::-ms-expand { /* for IE 11 */
+  display: none;
+}
+.disclaimer {
+  font-size: .75em;
+  opacity: .5;
+}
+.pass {
+  background: rgba($color_second, .2);
+  color: $color_second;
+}
+.pass:hover {
+  background: rgba($color_second, .4);
+  color: $color_second;
+}
+
+
+
+/*
+ * Varios
+ *
+ */
+.separator {
+  margin: 3em 0;
+  border-top: 1px solid $color_separator;
+}
+:focus {
+  outline: 0;
+}
+
+
+/*
+ * Social
+ *
+ */
+.social_share {
+  display: inline-block;
+  padding: .35em .75em;
+  margin: 1em 1em 0 0;
+  color: #FFF;
+  text-decoration: none;
+  @include border-radius(3px);
+  .fa {
+    margin: 0;
+    display: inline-block;
+  }
+}
+a.social_share {
+  .fa {
+    margin: 0 .2em 0 0;
+  }
+}
+.social_share:hover {
+  color: #FFF;
+}
+.facebook {
+  background: $color_facebook;
+}
+.twitter {
+  background: $color_twitter;
+}
+.linkedin {
+  background: #0074B5;
+}
+.email {
+  background: $color_main;
+}
+.code {
+  background: $color_main;
+}
+.facebook:hover {
+  background: darken(#3A589A, 10%);
+}
+.twitter:hover {
+  background: darken(#00ABEF, 10%);
+}
+.email:hover {
+  background: darken($color_main, 10%);
+}
+.code:hover {
+  background: darken($color_main, 10%);
+}
+.social_links_container {
+  // width: 40px;
+  z-index: 90;
+  
+  a {
+    @include border-radius(3em);
+    margin: 0 .5em 0 0;
+    font-size: 15px;
+    padding: .2em .1em;
+    color: #FFF;
+    display: inline-block;
+    width: 2.25em;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  a.twitter {
+
+  }
+  a.facebook {
+
   }
 }
