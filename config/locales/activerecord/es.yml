@@ -1,0 +1,24 @@
+---
+es:
+  activerecord:
+    models:
+      user: Usuario
+    attributes:
+      user:
+        first_name: Nombre
+        last_name: Apellidos
+        email: E-mail
+        password: Contraseña
+        password_confirmation: Confirmación de la contraseña
+        current_password: Contraseña actual
+        document_type: Tipo de documento
+        document_number: Número de documento
+    errors:
+      models:
+        user:
+          attributes:
+            document_number:
+              invalid_letter: 'La letra del documento no es válida'
+              invalid_dni_format: 'El formato del documento no es válido. Tiene que componerse de 8 números y una letra, sin espacios'
+            current_password:
+              invalid_current_password: 'La contraseña actual no es correcta'
