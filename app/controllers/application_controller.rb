@@ -20,7 +20,11 @@ class ApplicationController < ActionController::Base
 
   def silent_login
     unless logged_in?
-      log_in(User.create! email: "#{Time.now.to_i}@example.com")
+      log_in(User.create! email: "#{Time.now.to_i}@example.com", ip: remote_ip)
     end
+  end
+
+  def remote_ip
+    request.env['action_dispatch.remote_ip'].try(:calculate_ip) || request.remote_ip
   end
 end
