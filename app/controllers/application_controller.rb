@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   rescue_from ActionController::RoutingError, with: :render_404
   rescue_from ActionController::UnknownFormat, with: :render_404
 
+  include SessionsManagement
+
   def render_404
     render file: "public/404", status: 404, layout: false, handlers: [:erb], formats: [:html]
   end

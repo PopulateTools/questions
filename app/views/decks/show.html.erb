@@ -1,4 +1,13 @@
 <h1><%= @deck.name %></h1>
 <%= simple_format @deck.description %>
 
-<%= link_to 'Start!', deck_question_path(@deck) %>
+<% if logged_in? %>
+  <div id="app">
+    <question></question>
+  </div>
+<% else %>
+  <%= form_tag :session, method: :post do %>
+    <%= email_field_tag :email %>
+    <%= submit_tag 'Send' %>
+  <% end %>
+<% end %>
