@@ -1,0 +1,5 @@
+<% if @user.valid? %>
+  $('.option').hide();
+<% else %>
+  $('.edit_user input[type="email"]').val('Email inválido!');
+<% end %>

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
 
   resource :session, only: [:create]
-  post 'user_token' => 'user_token#create', as: :user_token
+  resource :user, only: [:update]
 
   resources :decks, only: [:show], path: '' do
     member do
