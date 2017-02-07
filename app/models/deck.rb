@@ -1,3 +1,3 @@
 class Deck < ApplicationRecord
-  has_many :cards, dependent: :destroy
+  has_many :questions, dependent: :destroy
 end

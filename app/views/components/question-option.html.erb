@@ -1,0 +1,9 @@
+<template id="question-option-template">
+  <div class="option">
+    <input type="radio" :id="html_id" :name="name" :value="value" v-on:change="handleChange" v-model="picked" />
+    <label :for="html_id">
+      <span></span>
+      {{value}}
+    </label>
+  </div>
+</template>

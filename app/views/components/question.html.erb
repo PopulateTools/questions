@@ -1,0 +1,16 @@
+<template id="question-template">
+<div>
+  <div class="question_main">
+
+    <h1>{{title}}</h1>
+    <h1 class="results"></h1>
+
+    <div class="options">
+      <question-option v-for="option in options" :id="option.id" :value="option.value" :question_id="id"></question-option>
+    </div>
+
+  </div>
+
+  <a href="question_stats" class="button" v-if="replied">Siguiente</a>
+</div>
+</template>

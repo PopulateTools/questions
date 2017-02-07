@@ -1,22 +1,22 @@
 ---
 option1_question1_corruption:
   question: question1_corruption
-  value: Yes
+  value: "Yes"
   position: 0
 
 option2_question1_corruption:
   question: question1_corruption
-  value: No
+  value: "Sometimes"
   position: 1
 
 option1_question2_corruption:
   question: question2_corruption
-  value: Yes
+  value: "Yes"
   position: 0
 
 option2_question2_corruption:
   question: question2_corruption
-  value: No
+  value: "No"
   position: 1
 
 option1_question1_polytics:

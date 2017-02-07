@@ -2,12 +2,22 @@
 <%= simple_format @deck.description %>
 
 <% if logged_in? %>
-  <div id="app">
-    <question></question>
+  <div class="question_cont carousel" id="app">
+    <div class="question">
+      <question></question>
+    </div>
   </div>
+
+  <%= javascript_tag do %>
+    window.sessionId = '<%= current_user_api_token %>';
+  <% end %>
+
 <% else %>
   <%= form_tag :session, method: :post do %>
     <%= email_field_tag :email %>
     <%= submit_tag 'Send' %>
   <% end %>
 <% end %>
+
+<%= render template: 'components/question' %>
+<%= render template: 'components/question-option' %>

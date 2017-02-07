@@ -10,10 +10,8 @@ class User < ApplicationRecord
 
   before_save { self.email = email.downcase.strip }
 
-  def self.digest(string)
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                  BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost: cost)
+   def self.encrypt(token)
+    Digest::SHA1.hexdigest(token.to_s)
   end
 
   def self.new_token
@@ -22,14 +20,14 @@ class User < ApplicationRecord
 
   def remember
     self.remember_token = self.class.new_token
-    update_attribute(:remember_digest, User.digest(remember_token))
+    update_attribute(:remember_digest, User.encrypt(remember_token))
   end
 
+  def authenticated?(remember_token)
+    remember_digest == User.encrypt(remember_token)
+  end
 
-  def to_token_payload
-    {
-      sub: id,
-      email: email
-    }
+  def api_token
+    @api_token ||= [Base64.strict_encode64(email), Base64.strict_encode64(remember_token)].join('.')
   end
 end

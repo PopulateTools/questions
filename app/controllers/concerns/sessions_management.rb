@@ -2,7 +2,7 @@ module SessionsManagement
   extend ActiveSupport::Concern
 
   included do
-    helper_method :current_user, :logged_in?, :current_user?
+    helper_method :current_user, :logged_in?, :current_user?, :current_user_api_token
   end
 
   def logged_in?
@@ -12,7 +12,22 @@ module SessionsManagement
   def current_user
     @current_user ||= if (user_id = session[:user_id])
       User.find_by(id: user_id)
+    elsif (user_id = cookies.signed[:user_id])
+      user = User.find_by(id: user_id)
+      if user && user.authenticated?(cookies[:remember_token])
+        log_in user
+        user
+      end
     end
+  end
+
+  def current_user_api_token
+    @current_user_api_token ||= if logged_in?
+                                  [
+                                    Base64.strict_encode64(current_user.email),
+                                    Base64.strict_encode64(cookies[:remember_token])
+                                  ].join('.')
+                                end
   end
 
   def current_user?(user)
