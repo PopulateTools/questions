@@ -3,8 +3,33 @@ Vue.component('question-option-stats', {
   props: ['value', 'percentage'],
   computed: {
     cssStyle: function(){
-      return "width: " + this.percentage + "%";
+      return "width: " + this.animatedPercentage + "%";
     }
   },
-  methods: {}
+  data: function(){
+    return {
+      animatedPercentage: 0
+    }
+  },
+  watch: {
+    percentage: function(newValue, oldValue){
+      var vm = this;
+      var animationFrame;
+      function animate (time) {
+        TWEEN.update(time);
+        animationFrame = requestAnimationFrame(animate);
+      }
+      new TWEEN.Tween({ tweeningNumber: oldValue })
+        .easing(TWEEN.Easing.Quadratic.Out)
+        .to({ tweeningNumber: newValue }, 300)
+        .onUpdate(function () {
+          vm.animatedPercentage = this.tweeningNumber.toFixed(0);
+        })
+        .onComplete(function () {
+          cancelAnimationFrame(animationFrame)
+        })
+        .start()
+      animationFrame = requestAnimationFrame(animate)
+    }
+  }
 });
