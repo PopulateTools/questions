@@ -1,6 +1,5 @@
-<div class="home question_cont" id="app">
-
-  <div v-if="!started && !finished">
+<div id="app">
+  <div class="home question_cont" v-if="!started && !finished">
 
     <h1><%= title @deck.name %></h1>
     <% @deck.description.each_line do |line| %>
@@ -12,7 +11,6 @@
     <div class="separator"></div>
   </div>
   <question :deck="deck" v-else-if="!finished"></question>
-
 </div>
 
 <%= javascript_tag do %>
