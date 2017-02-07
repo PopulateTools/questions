@@ -1,16 +1,22 @@
-# rails-template
+# The questions machine
 
-A Rails template app we use at Populate. 
+An experiment from Populate to run you trough a deck of quick questions and make you think about it.
 
-## Front-end gems
+We are starting with a first deck about corruption and how all of us, sometimes, do small actions
+that can be considered corruption.
 
-* Turbolinks
-* Velocity http://julian.com/research/velocity/
-* jQuery Dynatable http://www.dynatable.com/
-* jQuery Sticky http://stickyjs.com/
-* Tipsy http://onehackoranother.com/projects/jquery/tipsy/
-* Quill (Rich Text editor) http://quilljs.com/
-* Cookies_eu https://github.com/infinum/cookies_eu
-* Pickadate http://amsul.ca/pickadate.js/
-* Bourbon http://bourbon.io/
-* Populities https://github.com/PopulateTools/populities
+## Contribute
+
+This is an open project. We'd love to hear from you, to receive new questions or to collaborate in
+the codebase.
+
+## About the development
+
+We use mainly Vue.js and Ruby on Rails.
+
+To install the project
+
+1. clone the repository
+2. `cd questions`
+3. `rails db:setup` 
+4. Open the browser in `http://localhost:3000`
