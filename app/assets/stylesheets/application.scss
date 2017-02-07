@@ -29,7 +29,7 @@ $text_soft: #A3A3A3;
 $color_separator: #EEEEEE;
 $color_main: #D93E83;
 $color_main_negative: #DED3D4;
-$color_bg_main: #D6DAD1;
+$color_bg_main: #E2E5DE;
 $color_headings: #737571;
 $color_second: #6EAFB3;
 $color_third: #DFBC00;
@@ -145,10 +145,14 @@ $width_sidebar_site: 15%;
     color: $color_headings;
     margin-top: 0;
   }
+  h1.results {
+    min-height: 50px;
+    font-weight: 200;
+  }
   .question_main {
     width: 75%;
   }
-  button {
+  button, a.button {
     display: inline-block;
     width: 75%;
   }
@@ -159,7 +163,9 @@ $width_sidebar_site: 15%;
     padding-right: .5em;
   }
 }
+.question.results {
 
+}
 
 
 /*
@@ -238,8 +244,8 @@ form {
 }
 input[type=text], input[type=email], input[type=submit], .button, button, .option, select, option, textarea {
   box-sizing: border-box;
-  height: 54px;
-  padding: 0 1em; 
+  // height: 54px;
+  padding: 1em 3em; 
   margin: 0 .5em 0 0;
   display: inline-block;
   vertical-align: middle;
@@ -248,6 +254,12 @@ input[type=text], input[type=email], input[type=submit], .button, button, .optio
   font-size: 1.2em;
   font-style: 400;
   font-family: $font_headings;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+a.button:hover {
+  text-decoration: none;
 }
 textarea {
   width: 100%;
@@ -259,9 +271,9 @@ input[type=submit], .button, button {
   border: 0;
   background: $color_main;
   color: #FFF;
-  padding: 0 2em;
   cursor: pointer;
   margin: 1.5em auto;
+  font-weight: bold;
 }
 input[type=submit]:hover, .button:hover, button:hover {
   background: darken($color_main, 10%);
@@ -273,12 +285,27 @@ option, select {
   padding: 18px;
   background: #F1F1F1;
 }
+.option.graph_bar {
+  position: relative;
+  box-sizing: border-box;
+  padding: 15px 18px;
+  background: rgba($color_main, .12);
+  box-sizing: border-box;
+  .value {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    background: rgba($color_main, .18); 
+    top: 0;
+    left: 0;
+    @include border-radius(6px);
+  }
+}
 .option {
   padding: 0;
   display: block;
-  margin: 0 0 .5em 0;
+  margin: 0 0 1.5em 0;
   text-align: left;
-  height: 65px;
   font-size: 1.1em;
   font-weight: 400;
   color: darken($color_main, 10%);
@@ -300,7 +327,6 @@ option, select {
     width: 100%;
     border: none;
     padding: 20px;
-    height: 63px;
   }
 }
 .button:hover, button {
@@ -325,8 +351,8 @@ input[type="checkbox"] + label, input[type="radio"] + label {
 }
 input[type="checkbox"] + label span, input[type="radio"] + label span {
   display: inline-block;
-  width: 19px;
-  height: 19px;
+  width: 17px;
+  height: 17px;
   border: 1px solid $color_main;
   background: #FFF;
   @include border-radius(3px);
