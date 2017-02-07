@@ -1,0 +1,30 @@
+---
+fernando_answer_question1_corruption:
+  question: question1_corruption
+  user: fernando
+  option: option2_question1_corruption
+
+fernando_answer_question2_corruption:
+  question: question2_corruption
+  user: fernando
+  option: option2_question2_corruption
+
+alvaro_answer_question1_corruption:
+  question: question1_corruption
+  user: alvaro
+  option: option1_question1_corruption
+
+alvaro_answer_question2_corruption:
+  question: question2_corruption
+  user: alvaro
+  option: option2_question2_corruption
+
+rafa_answer_question1_corruption:
+  question: question1_corruption
+  user: rafa
+  option: option1_question1_corruption
+
+rafa_answer_question2_corruption:
+  question: question2_corruption
+  user: rafa
+  option: option1_question2_corruption

@@ -1,0 +1,55 @@
+---
+option1_question1_corruption:
+  question: question1_corruption
+  value: Yes
+  position: 0
+
+option2_question1_corruption:
+  question: question1_corruption
+  value: No
+  position: 1
+
+option1_question2_corruption:
+  question: question2_corruption
+  value: Yes
+  position: 0
+
+option2_question2_corruption:
+  question: question2_corruption
+  value: No
+  position: 1
+
+option1_question1_polytics:
+  question: question1_polytics
+  value: Felipe Gonzalez
+  position: 0
+
+option2_question1_polytics:
+  question: question1_polytics
+  value: Mariano Rajoy
+  position: 1
+
+option3_question1_polytics:
+  question: question1_polytics
+  value: Esperanza Aguirre
+  position: 2
+
+option4_question1_polytics:
+  question: question1_polytics
+  value: JL Zapatero
+  position: 3
+
+option1_question2_polytics:
+  question: question2_polytics
+  value: 100 years
+  position: 0
+
+option2_question2_polytics:
+  question: question2_polytics
+  value: 80 years
+  position: 1
+
+option3_question3_polytics:
+  question: question2_polytics
+  value: 75 years
+  position: 2

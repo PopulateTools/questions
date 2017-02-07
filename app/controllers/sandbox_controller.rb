@@ -1,5 +1,4 @@
 class SandboxController < ApplicationController
-
   def index
     @templates = Dir.glob(Rails.root.join('app/views/sandbox/*.html.erb').to_s).map do |filename|
       filename = File.basename(filename, File.extname(filename))
@@ -16,11 +15,11 @@ class SandboxController < ApplicationController
       else
         render "sandbox/#{params[:template]}"
       end
+
     elsif lookup_context.exists?("sandbox/#{params[:template]}/index")
       render "sandbox/#{params[:template]}/index"
     else
       render :action => "index"
     end
   end
-
 end

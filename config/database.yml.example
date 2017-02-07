@@ -1,14 +1,12 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: 5
-  username: postgres
-  password: 
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  database: wadus_development
+  database: questions-machine_development
 
 test:
   <<: *default
-  database: wadus_test
+  database: questions-machine_test

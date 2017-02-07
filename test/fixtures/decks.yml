@@ -1,0 +1,10 @@
+---
+corruption:
+  name: Let's talk about corruption
+  slug: corruption
+  description: Respond a few questions about corruption
+
+polytics:
+  name: Let's talk about polytics
+  slug: polytics
+  description: Respond a few questions about polytics

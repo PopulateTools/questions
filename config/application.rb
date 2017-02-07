@@ -1,37 +1,25 @@
 require_relative 'boot'
-require 'rails/all'
+
+require "rails"
+require "active_model/railtie"
+require "active_job/railtie"
+require "active_record/railtie"
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "action_view/railtie"
+require "sprockets/railtie"
+require "rails/test_unit/railtie"
 
 Bundler.require(*Rails.groups)
 
-module RailsTemplate
+module QuestionsMachine
   class Application < Rails::Application
-    config.time_zone = 'UTC'
-
-    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
-    config.i18n.default_locale = :es
-    config.i18n.available_locales = [:es, :en]
-
-    config.active_record.raise_in_transactional_callbacks = true
-
     config.generators do |g|
-      g.orm             :active_record
-      g.template_engine :erb
-      g.assets          false
-      g.helper          false
-      g.routes          false
-      g.test_framework  :rspec, fixtures: false, view_spec: false,
-        helper_specs: false, routing_specs: false,
-        controller_specs: false, request_specs: false
+      g.orm            :active_record
+      g.assets         false
+      g.helper         false
+      g.routes         false
+      g.test_framework :minitest, spec: false, fixture: true
     end
-
-    # Set the default host name for emails
-    # config.action_mailer.default_url_options = { host: '' }
-
-    # Autoloading
-    config.autoload_paths += [
-      "#{config.root}/lib",
-      "#{config.root}/lib/validators"
-    ]
-
   end
 end

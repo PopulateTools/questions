@@ -1,0 +1,17 @@
+---
+question1_corruption:
+  deck: corruption
+  title: If somebody offers you to not pay taxes, would you accept?
+
+question2_corruption:
+  deck: corruption
+  title: Would you skip a queue if you could?
+
+question1_polytics:
+  deck: polytics
+  title: What is the current president of Spain?
+
+question2_polytics:
+  deck: polytics
+  title: How long has it been since the first WW?
+

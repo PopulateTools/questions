@@ -1,0 +1,4 @@
+<h1><%= @deck.name %></h1>
+<%= simple_format @deck.description %>
+
+<%= link_to 'Start!', deck_question_path(@deck) %>

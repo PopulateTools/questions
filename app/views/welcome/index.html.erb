@@ -1,0 +1,7 @@
+<h1>Welcome to the machine of questions</h1>
+
+<ul>
+<% Deck.all.each do |deck| %>
+  <li><%= link_to deck.name, deck_path(deck.slug) %></li>
+<% end %>
+</ul>
