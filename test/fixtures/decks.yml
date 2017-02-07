@@ -1,8 +1,10 @@
 ---
 corruption:
-  name: Let's talk about corruption
-  slug: corruption
-  description: Respond a few questions about corruption
+  name: El corrupto, ¿nace o se hace?
+  slug: corrupcion
+  description: |
+    Imagínate que vas por ahí y ves 10€. Serán de alguien, pero no se sabe de quién, y si los coges nadie se va a enterar. ¿Los cogerías?
+    Y ahora imaginate que "vas por ahí" y que puedes coger 10 millones y que tampoco nadie se va a enterar.
 
 polytics:
   name: Let's talk about polytics

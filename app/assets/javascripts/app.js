@@ -3,11 +3,14 @@ $(document).on('ready page:change', function() {
 
   window.app = new Vue({
     el: '#app',
-    data: {
-      sessionId: ''
-    },
+    data: window.storage,
     mounted: function(){
-      Vue.set(this, 'sessionId', window.sessionId);
+      window.bus.$on('deckFinished', this.handleDeckFinished);
+    },
+    methods: {
+      handleDeckFinished: function(){
+        window.location.href = '/' + this.deck + '/end';
+      }
     }
   });
 });

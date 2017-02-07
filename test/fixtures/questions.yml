@@ -1,11 +1,31 @@
 ---
 question1_corruption:
   deck: corruption
-  title: If somebody offers you to not pay taxes, would you accept?
+  title: Estás en una oficina de correos y te dan mal el cambio
 
 question2_corruption:
   deck: corruption
-  title: Would you skip a queue if you could?
+  title: Hay una gran cola pero nadie te vería si te la saltas
+
+question3_corruption:
+  deck: corruption
+  title: Vas a dejar tu trabajo y tienes la posibilidad de arreglar con tu jefe que te haga un falso despido para cobrar el paro
+
+question4_corruption:
+  deck: corruption
+  title: ¿Alguna vez has falta al trabajo poniendo como excusa que estabas malo, cuando no lo estabas?
+
+question5_corruption:
+  deck: corruption
+  title: Viene un electricista a hacerte un arreglo a casa y te dice que si quieres factura te tiene que subir el importe de la reparación para incluir el IVA
+
+question6_corruption:
+  deck: corruption
+  title: Los tornos del metro están abiertos
+
+question7_corruption:
+  deck: corruption
+  title: Encuentras una cartera con billetes dentro
 
 question1_polytics:
   deck: polytics

@@ -1,22 +1,27 @@
-<h1><%= @deck.name %></h1>
-<%= simple_format @deck.description %>
+<div class="home question_cont" id="app">
 
-<% if logged_in? %>
-  <div class="question_cont carousel" id="app">
-    <div class="question">
-      <question></question>
-    </div>
+  <div v-if="!started && !finished">
+
+    <h1><%= @deck.name %></h1>
+    <% @deck.description.each_line do |line| %>
+      <h2><%= line %></h2>
+    <% end %>
+
+    <h3><a class="button inline" @click.prevent="started=true">¿Qué harías tu en estas situaciones?</a></h3>
+
+    <div class="separator"></div>
   </div>
+  <question :deck="deck" v-else-if="!finished"></question>
 
-  <%= javascript_tag do %>
-    window.sessionId = '<%= current_user_api_token %>';
-  <% end %>
+</div>
 
-<% else %>
-  <%= form_tag :session, method: :post do %>
-    <%= email_field_tag :email %>
-    <%= submit_tag 'Send' %>
-  <% end %>
+<%= javascript_tag do %>
+  window.storage = {
+    deck: '<%= @deck.slug %>',
+    sessionId: '<%= current_user_api_token %>',
+    started: false,
+    finished: false
+  };
 <% end %>
 
 <%= render template: 'components/question' %>

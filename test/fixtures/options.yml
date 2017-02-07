@@ -1,22 +1,72 @@
 ---
 option1_question1_corruption:
   question: question1_corruption
-  value: "Yes"
+  value: Te lo quedas, total no es mucho
   position: 0
 
 option2_question1_corruption:
   question: question1_corruption
-  value: "Sometimes"
+  value: Avisas al empleado
   position: 1
 
 option1_question2_corruption:
   question: question2_corruption
-  value: "Yes"
+  value: Aguardo mi turno, a pesar de que supone esperar media hora
   position: 0
 
 option2_question2_corruption:
   question: question2_corruption
-  value: "No"
+  value: Me la salto
+  position: 1
+
+option1_question3_corruption:
+  question: question3_corruption
+  value: Lo hago, total hay gente que roba mucho más
+  position: 0
+
+option2_question3_corruption:
+  question: question3_corruption
+  value: Me voy sin paro
+  position: 1
+
+option1_question4_corruption:
+  question: question4_corruption
+  value: No lo recuerdo
+  position: 0
+
+option2_question4_corruption:
+  question: question4_corruption
+  value: Alguna vez
+  position: 1
+
+option1_question5_corruption:
+  question: question5_corruption
+  value: Prefieres ahorrarte el impuesto
+  position: 0
+
+option2_question5_corruption:
+  question: question5_corruption
+  value: Le exiges la factura aún costándote más
+  position: 1
+
+option1_question6_corruption:
+  question: question6_corruption
+  value: Me cuelo, nadie me ve
+  position: 0
+
+option2_question6_corruption:
+  question: question6_corruption
+  value: Pago mi billete
+  position: 1
+
+option1_question7_corruption:
+  question: question7_corruption
+  value: Te lo quedas, total ya está perdida
+  position: 0
+
+option2_question7_corruption:
+  question: question7_corruption
+  value: Intentas encontrar al dueño
   position: 1
 
 option1_question1_polytics:

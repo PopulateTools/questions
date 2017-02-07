@@ -3,6 +3,9 @@ class Api::QuestionsController < Api::ApplicationController
 
   def show
     @question = @deck.questions.pending_for_user(current_user)
+    if @question.nil?
+      head :no_content
+    end
   end
 
   private
