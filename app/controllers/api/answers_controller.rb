@@ -3,7 +3,7 @@ class Api::AnswersController < Api::ApplicationController
 
   def create
     @question.answers.create! user: current_user, option: @option
-    render json: {}, head: :ok
+    render json: @question.reload.stats, status: :ok
   end
 
   private

@@ -4,15 +4,17 @@
       <div class="question_main">
 
         <h1>{{title}}</h1>
-        <h1 class="results"></h1>
+        <h1 class="results" v-if="replied">¿Qué han contestado otros?</h1>
 
-        <div class="options">
+        <div class="options" v-if="!replied">
           <question-option v-for="option in options" :id="option.id" :value="option.value" :question_id="id"></question-option>
         </div>
-
+        <div class="options" v-else>
+          <question-option-stats v-for="option in options" :value="option.value" :percentage="option.percentage"></question-option-stats>
+        </div>
       </div>
 
-      <a href="question_stats" class="button" v-if="replied">Siguiente</a>
+      <a class="button" v-if="replied" @click.prevent="fetchData">Sigamos</a>
     </div>
   </div>
 </template>

@@ -11,4 +11,22 @@ class Question < ApplicationRecord
       nil
     end
   end
+
+  def stats
+    total_answers = answers.count.to_f
+    options.map do |option|
+      total = option.answers.count.to_f
+      if total > 0
+        percentage = ((total / total_answers)*100).round(1)
+      else
+        percentage = 0
+      end
+
+      {
+        id: option.id,
+        value: option.value,
+        percentage: percentage
+      }
+    end
+  end
 end
