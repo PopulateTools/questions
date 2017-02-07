@@ -2,7 +2,7 @@
 
   <div v-if="!started && !finished">
 
-    <h1><%= @deck.name %></h1>
+    <h1><%= title @deck.name %></h1>
     <% @deck.description.each_line do |line| %>
       <h2><%= line %></h2>
     <% end %>

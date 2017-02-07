@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RailsTemplate</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <% set_meta_tags twitter: { site: '@PopulateTools', card: 'summary' } %>
+  <% set_meta_tags og: {
+    title:    'La Máquina de las Preguntas',
+    type:     'website',
+    url:      'https://questions.populate.tools'
+  } %>
+  <%= display_meta_tags site: 'La Máquina de las Preguntas', reverse: true %>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <div class="container">
-	
+
 	<%= yield %>
 
 	<div class="sidebar_player">
-    
+
     <div class="points">
       <div class="points_n">1.234</div>
       puntos
@@ -24,24 +31,16 @@
       <div class="calm">Tranquilo, solo te dejaremos jugar 20m</div>
 
     </div>
-
-
   </div>
 
   <div class="sidebar_site">
     <menu>
       <ul>
-        <li><%= link_to 'Qué y quiénes' %></li>
-        <li><%= link_to 'Añade pregunta', 'question_add' %></li>
-        <li>---</li>
-        <li><%= link_to '[Inicio]', 'home' %></li>
-        <li><%= link_to '[Pregunta]', 'question' %></li>
-        <li><%= link_to '[Final]', 'end' %></li>
+        <li><%= link_to 'Qué y quiénes', about_path %></li>
       </ul>
     </menu>
 
   </div>
-
 </div>
 
 </body>
