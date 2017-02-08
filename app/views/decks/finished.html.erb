@@ -17,7 +17,7 @@
 
     <%= form_for current_user, url: user_path, remote: true do |f| %>
       <%= f.email_field :email, placeholder: "tu correo-e", class: 'inline', value: nil %>
-      <%= f.submit 'Guardar' %>
+      <%= f.submit 'Guardar', class: 'inline' %>
     <% end %>
   </div>
 
